@@ -10,6 +10,7 @@ import SwiftUI
 
 struct SaveView: View {
     @EnvironmentObject var stack: Stack
+    @Environment(\.presentationMode) var presentation
     
     var playlists = [Playlist]()
     
@@ -32,7 +33,10 @@ struct SaveView: View {
         ScrollView {
             ForEach(playlists, id: \.self) { playlist in
                 Button(action: {
-                    do { try SpotiFriend.add(self.stack.tracks, to: playlist) }
+                    do {
+                        try SpotiFriend.add(self.stack.tracks, to: playlist)
+                        self.presentation.wrappedValue.dismiss()
+                    }
                     catch { print(error) }
                 }) {
                     Text(playlist.name)
