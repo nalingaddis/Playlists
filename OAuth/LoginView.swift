@@ -11,10 +11,36 @@ import Combine
 
 struct LoginView: View {
     var body: some View {
-        Button(action: {
-            Authenticator.login()
-        }) {
-            Text("Login to Spotify")
+        GeometryReader { geo in
+            VStack {
+                Text("Login with")
+                    .foregroundColor(Color("SpotifyWhite"))
+                    .font(.title)
+                self.loginButton
+            }
+            .padding(geo.size.width / 11)
+            .aspectRatio(contentMode: .fit)
+            .cornerRadius(5)
+            .frame(width: geo.size.width / 11 * 9, height: geo.size.height)
+            
+        }
+        .background(Color("SpotifyBlack"))
+        .edgesIgnoringSafeArea(.all)
+    }
+        
+    private var loginButton: some View {
+        GeometryReader { geo in
+            Button(action: {
+                Authenticator.login()
+            }) {
+                Image("Spotify_Logo_RGB_White")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .padding()
+                    .background(Color("SpotifyGreen"))
+                    .cornerRadius(40)
+            }
+            .buttonStyle(PlainButtonStyle())
         }
     }
 }
