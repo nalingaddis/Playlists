@@ -130,12 +130,49 @@ enum SpotiFriend {
             }
         
     }
+    
+    static func createPlaylist(name: String, description: String, isPrivate: Bool) throws -> Playlist {
+        let lock = Semaphore()
+        var error: Error?
+        var result: Playlist?
+        
+        let parameters: [String: Any] = [
+            "name": name,
+            "description": description,
+            "public": !isPrivate
+        ]
+        
+        let request = SpotifyRequest<Playlist>(
+            endpoint: "users/\(try whoami().id)/playlists",
+            method: .POST,
+            token: try fetchToken(),
+            contentType: .json,
+            parameters: parameters)
+                
+        Client().send(request) { completion in
+            switch completion {
+            case .success(let response):
+                result = response.data
+            case .failure(let clientError):
+                error = clientError
+            }
+            lock.signal()
+        }
+        lock.wait()
+        
+        if let error = error { throw error }
+        
+        guard let output = result else { throw Errors.missingData }
+        
+        return output
+    }
 }
 
 private extension SpotiFriend {
     enum Errors: Error {
         case missingToken
         case errorFindingMe
+        case missingData
     }
 }
 

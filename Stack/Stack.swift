@@ -26,4 +26,8 @@ class Stack: ObservableObject {
     func remove(track: Track) {
         tracks.removeAll(where: { $0.id == track.id })
     }
+    
+    func clear() {
+        tracks.removeAll()
+    }
 }

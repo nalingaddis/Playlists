@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AB2A0DC224D1D79100DA5167 /* Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2A0DC124D1D79100DA5167 /* Snapshot.swift */; };
+		AB2A0DC624D5E20C00DA5167 /* CreatePlaylistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2A0DC524D5E20C00DA5167 /* CreatePlaylistView.swift */; };
 		ABCEDC6824C7F7BE002568C4 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCEDC6724C7F7BE002568C4 /* Stack.swift */; };
 		ABCEDC6A24C91AD8002568C4 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCEDC6924C91AD8002568C4 /* HomeView.swift */; };
 		ABCEDC6C24C92B82002568C4 /* SearchItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCEDC6B24C92B82002568C4 /* SearchItemView.swift */; };
@@ -72,6 +73,7 @@
 
 /* Begin PBXFileReference section */
 		AB2A0DC124D1D79100DA5167 /* Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snapshot.swift; sourceTree = "<group>"; };
+		AB2A0DC524D5E20C00DA5167 /* CreatePlaylistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlaylistView.swift; sourceTree = "<group>"; };
 		ABCEDC6724C7F7BE002568C4 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		ABCEDC6924C91AD8002568C4 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		ABCEDC6B24C92B82002568C4 /* SearchItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemView.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				ABCEDC6D24C92BAE002568C4 /* StackView.swift */,
 				ABCEDC6F24C92BBE002568C4 /* StackItemView.swift */,
 				ABCEDC7124CF13D9002568C4 /* SaveView.swift */,
+				AB2A0DC524D5E20C00DA5167 /* CreatePlaylistView.swift */,
 			);
 			path = Stack;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 				ABFBBAA524C71650004B2FDF /* Artist.swift in Sources */,
 				ABFBBA9124BFEDBA004B2FDF /* Token.swift in Sources */,
 				ABCEDC7424CF1603002568C4 /* Search.swift in Sources */,
+				AB2A0DC624D5E20C00DA5167 /* CreatePlaylistView.swift in Sources */,
 				ABCEDC6824C7F7BE002568C4 /* Stack.swift in Sources */,
 				ABCEDC7A24CF1C02002568C4 /* SpotiFriend.swift in Sources */,
 				ABFBBA9324C33ED2004B2FDF /* Keychain.swift in Sources */,
