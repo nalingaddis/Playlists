@@ -55,7 +55,7 @@ extension Request {
         
         if method == .POST {
             if contentType == .json {
-                do { request.httpBody = try JSONSerialization.data(withJSONObject: parameters) }
+                do { request.httpBody = try JSONSerialization.data(withJSONObject: parameters as Any) }
                 catch { return nil }
             }
             if contentType == .urlencoded {

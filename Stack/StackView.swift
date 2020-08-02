@@ -15,9 +15,16 @@ struct StackView: View {
     var body: some View {
         NavigationView {
             VStack{
-                NavigationLink(destination: SaveView().environmentObject(stack)) {
-                    Text("Save")
-                }
+                HStack {
+                    NavigationLink(destination: SaveView().environmentObject(stack)) {
+                        Text("Save")
+                    }
+                    Button(action: {
+                        self.stack.clear()
+                    }) {
+                        Text("Clear")
+                    }
+                }.disabled(self.stack.tracks.isEmpty)
                 ScrollView {
                     VStack {
                         ForEach(stack.tracks, id: \.self.id) { StackItemView(track: $0, stack: self.stack) }
