@@ -16,5 +16,9 @@ struct Playlist: Pagable {
     
     var body: some View {
         Text(self.name)
+        .padding(10)
+        .foregroundColor(Color("SpotifyWhite"))
+        .background(Color("SpotifyBlack"))
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 }

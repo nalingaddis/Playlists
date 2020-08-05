@@ -16,14 +16,16 @@ struct HomeView: View {
         let stack = Stack()
         searchView = AnyView(SearchView().environmentObject(stack))
         stackView = AnyView(StackView().environmentObject(stack))
+        
+        UITabBar.appearance().barTintColor = UIColor(named: "SpotifyBlack")
     }
     
     var body: some View {
         TabView {
             searchView
-                .tabItem({ Text("Search") })
+                .tabItem({ Image(systemName: "magnifyingglass") })
             stackView
-                .tabItem({ Text("Stack") })
+                .tabItem({ Image(systemName: "music.note.list") })
         }
     }
 }

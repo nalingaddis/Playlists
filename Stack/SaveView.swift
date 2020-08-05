@@ -31,22 +31,19 @@ struct SaveView: View {
     }
     
     var body: some View {
-        ScrollView {
-            NavigationLink(destination: CreatePlaylistView()
-                .environmentObject(self.stack)
-                .onDisappear {
-                    self.presentation.wrappedValue.dismiss()
-            }) {
-                Text("+ New Playlist")
+        VStack {
+            HStack {
+                backButton
+                title
+                addPlaylistButton
             }
-            ForEach(playlists, id: \.self) { playlist in
-                Button(action: {
-                    self.add(to: playlist)
-                }) {
-                    Text(playlist.name)
-                }
-            }
-        }.alert(isPresented: $alertShowing) {
+            
+            playlistsList
+        }
+        .navigationBarHidden(true)
+        .navigationBarTitle("Select A Playlist")
+        .background(Color("SpotifyBlack").edgesIgnoringSafeArea(.all))
+        .alert(isPresented: $alertShowing) {
             Alert(title: Text("Songs added successfully"))
         }
     }
@@ -58,5 +55,48 @@ struct SaveView: View {
             self.alertShowing = true
         }
         catch { print(error) }
+    }
+}
+
+private extension SaveView {
+    var backButton: some View {
+        Button(action: { self.presentation.wrappedValue.dismiss() }) {
+            Image(systemName: "chevron.left")
+        }
+        .padding()
+        .foregroundColor(Color("SpotifyWhite"))
+    }
+    
+    var title: some View {
+        Text("Select A Playlist")
+        .padding()
+        .frame(maxWidth: .infinity)
+        .foregroundColor(Color("SpotifyWhite"))
+        .font(.title)
+        .cornerRadius(2)
+    }
+    
+    var addPlaylistButton: some View {
+        NavigationLink(destination: CreatePlaylistView()
+            .environmentObject(self.stack)
+            .onDisappear {
+                self.presentation.wrappedValue.dismiss()
+        }) {
+             Image(systemName: "plus")
+             .padding()
+             .foregroundColor(Color("SpotifyWhite"))
+        }
+    }
+    
+    var playlistsList: some View {
+        ScrollView {
+            VStack {
+                ForEach(playlists, id: \.self) { playlist in
+                    Button(action: { self.add(to: playlist) }) {
+                        playlist
+                    }
+                }
+            }
+        }
     }
 }

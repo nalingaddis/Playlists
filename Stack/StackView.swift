@@ -14,21 +14,60 @@ struct StackView: View {
     
     var body: some View {
         NavigationView {
-            VStack{
+            VStack {
+                Text("Playlist Preview")
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .foregroundColor(Color("SpotifyWhite"))
+                    .font(.title)
+                    .cornerRadius(2)
+                
+                stackView
+                
                 HStack {
-                    NavigationLink(destination: SaveView().environmentObject(stack)) {
-                        Text("Save")
-                    }
-                    Button(action: {
-                        self.stack.clear()
-                    }) {
-                        Text("Clear")
-                    }
-                }.disabled(self.stack.tracks.isEmpty)
-                ScrollView {
-                    VStack {
-                        ForEach(stack.tracks, id: \.self.id) { StackItemView(track: $0, stack: self.stack) }
-                    }
+                    save
+                    clear
+                }
+                .disabled(self.stack.tracks.isEmpty)
+                .padding()
+            }
+            .frame(maxWidth: .infinity)
+            .background(Color("SpotifyBlack")
+                .edgesIgnoringSafeArea(.all))
+            .navigationBarHidden(true)
+            .navigationBarTitle("Playlist Preview")
+        }
+    }
+    
+    private var save: some View {
+        NavigationLink(destination: SaveView().environmentObject(stack)) {
+            Text("Save")
+            .padding()
+            .frame(maxWidth: .infinity)
+            .foregroundColor(Color("SpotifyWhite"))
+            .background(Color("SpotifyGreen"))
+            .cornerRadius(40)
+        }
+    }
+    
+    private var clear: some View {
+        Button(action: {
+            self.stack.clear()
+        }) {
+            Text("Clear")
+            .padding()
+            .frame(maxWidth: .infinity)
+            .foregroundColor(Color("SpotifyWhite"))
+            .background(Color("SpotifyGreen"))
+            .cornerRadius(40)
+        }
+    }
+    
+    private var stackView: some View {
+        ScrollView {
+            VStack {
+                ForEach(stack.tracks, id: \.self.id) {
+                    StackItemView(track: $0, stack: self.stack)
                 }
             }
         }
