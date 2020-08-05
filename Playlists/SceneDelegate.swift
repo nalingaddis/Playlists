@@ -18,8 +18,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-
-        changeView(to: LoginView(), inScene: scene)
+        
+        /// If they have logged in before, fetch their code
+        if let code = try? Keychain.fetch(key: "playlists.spotify.user_code") {
+            authenticate(with: code, scene: scene)
+        } else {
+            changeView(to: LoginView(), inScene: scene)
+        }
     }
     
     /// Change the view in scene `scene` to the given `view`
@@ -36,17 +41,35 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
     }
     
-    // Called when the app is opened via URL
+    /// Called when the app is opened via URL
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        
         if let urlContext = URLContexts.first {
-            let semaphore = Semaphore()
-            do{
-                try Authenticator.tokens(using: urlContext.url, lock: semaphore)
-                semaphore.wait()
-                changeView(to: HomeView(), inScene: scene)
-            } catch {
-                print(error)
+            
+            guard let code =
+                URLComponents(url: urlContext.url, resolvingAgainstBaseURL: true)?
+                    .queryItems?
+                        .first(where: { $0.name == "code" })?
+                            .value
+            else {
+                print("Callback Code Missing")
+                return
             }
+            
+            authenticate(with: code, scene: scene)
+        }
+    }
+    
+    /// Authenticate with a user's code
+    func authenticate(with code: String, scene: UIScene) {
+        let semaphore = Semaphore()
+        do{
+            try Keychain.store(code, forKey: "playlists.spotify.user_code")
+            try Authenticator.tokens(using: code, lock: semaphore)
+            semaphore.wait()
+            changeView(to: HomeView(), inScene: scene)
+        } catch {
+            print(error)
         }
     }
 
@@ -77,7 +100,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
-
-
 }
 

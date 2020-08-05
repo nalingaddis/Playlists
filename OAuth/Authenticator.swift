@@ -16,7 +16,7 @@ enum AuthenticatorError: Error {
     case requestCreation
 }
 
-struct Authenticator {
+enum Authenticator {
     private static let client = Client()
     
     /// Prompts a user login request to begin the authentication process
@@ -36,16 +36,7 @@ struct Authenticator {
     /// Requests access tokens using the callback URL from the user login
     /// - Parameter callback: The callback URL sent after Spotify login
     /// - Throws: `AuthenticationError`
-    static func tokens(using callback: URL, lock: Semaphore) throws {
-        guard let code =
-            URLComponents(url: callback, resolvingAgainstBaseURL: true)?
-                .queryItems?
-                    .first(where: { $0.name == "code" })?
-                        .value
-        else {
-            throw AuthenticatorError.missingCode
-        }
-        
+    static func tokens(using code: String, lock: Semaphore) throws {
         do {
             client.send(try TokenRequest(code)) { result in
                 switch result {
