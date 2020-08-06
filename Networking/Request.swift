@@ -35,8 +35,8 @@ extension Request {
     func buildURLRequest() -> URLRequest? {
         guard var components = URLComponents(string: path) else { return nil }
         
+        var queries = [URLQueryItem]()
         if let params = parameters, contentType == .urlencoded {
-            var queries = [URLQueryItem]()
             params.forEach { key, value in
                 queries.append(URLQueryItem(name: key, value: value as? String))
             }

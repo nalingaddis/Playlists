@@ -27,33 +27,23 @@ struct CreatePlaylistView: View {
             HStack {
                 Button(action: { self.presentation.wrappedValue.dismiss() }) {
                     Image(systemName: "chevron.left")
+                    .style(IconButtonStyle())
                 }
-                .padding()
-                .foregroundColor(Color("SpotifyWhite"))
                 
                 Text("New Playlist")
-                .padding()
-                .frame(maxWidth: .infinity)
-                .foregroundColor(Color("SpotifyWhite"))
-                .font(.title)
-                .cornerRadius(2)
+                .style(TitleStyle())
             }
             
             ColorTextField(
                 placeholder: Text("Name").foregroundColor(Color("SpotifyWhite")),
                 text: $name)
-                .padding()
-                .foregroundColor(Color("SpotifyWhite"))
-                .background(Color.gray)
+                .style(SimpleTFStyle())
             
             ColorTextField(
                 placeholder: Text("Description").foregroundColor(Color("SpotifyWhite")),
                 text: $description)
-                .padding()
-                .frame(maxHeight: .infinity)
-                .foregroundColor(Color("SpotifyWhite"))
-                .background(Color.gray)
-                
+                .style(SimpleTFStyle())
+                            
             Toggle(isOn: $isPrivate) {
                 Text("Make private")
                 .padding()
@@ -71,19 +61,13 @@ struct CreatePlaylistView: View {
                 self.alertShowing = true
             }) {
                 Text("Create and Add")
-                .padding()
-                .frame(maxWidth: .infinity)
-                .foregroundColor(Color("SpotifyWhite"))
-                .background(Color("SpotifyGreen"))
-                .cornerRadius(40)
+                .style(SimpleButtonStyle())
             }
             .padding()
             .disabled(name.isEmpty)
         }
         .frame(maxHeight: .infinity)
-        .navigationBarHidden(true)
-        .navigationBarTitle("Create A Playlist")
-        .background(Color("SpotifyBlack").edgesIgnoringSafeArea(.all))
+        .style(NoHeaderNavStyle())
         .alert(isPresented: $alertShowing) {
             Alert(title: Text("Songs added successfully"))
         }

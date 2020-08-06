@@ -16,11 +16,7 @@ struct StackView: View {
         NavigationView {
             VStack {
                 Text("Playlist Preview")
-                    .padding()
-                    .frame(maxWidth: .infinity)
-                    .foregroundColor(Color("SpotifyWhite"))
-                    .font(.title)
-                    .cornerRadius(2)
+                .style(TitleStyle())
                 
                 stackView
                 
@@ -31,22 +27,14 @@ struct StackView: View {
                 .disabled(self.stack.tracks.isEmpty)
                 .padding()
             }
-            .frame(maxWidth: .infinity)
-            .background(Color("SpotifyBlack")
-                .edgesIgnoringSafeArea(.all))
-            .navigationBarHidden(true)
-            .navigationBarTitle("Playlist Preview")
+            .style(NoHeaderNavStyle())
         }
     }
     
     private var save: some View {
         NavigationLink(destination: SaveView().environmentObject(stack)) {
             Text("Save")
-            .padding()
-            .frame(maxWidth: .infinity)
-            .foregroundColor(Color("SpotifyWhite"))
-            .background(Color("SpotifyGreen"))
-            .cornerRadius(40)
+            .style(SimpleButtonStyle())
         }
     }
     
@@ -55,11 +43,7 @@ struct StackView: View {
             self.stack.clear()
         }) {
             Text("Clear")
-            .padding()
-            .frame(maxWidth: .infinity)
-            .foregroundColor(Color("SpotifyWhite"))
-            .background(Color("SpotifyGreen"))
-            .cornerRadius(40)
+            .style(SimpleButtonStyle())
         }
     }
     

@@ -16,10 +16,11 @@ struct SearchView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
+            MainHeader(titleString: "Search For Songs", settingsView: EmptyView(), infoView: EmptyView())
             self.searchBox
             self.results
         }
-        .frame(maxHeight: .infinity)
+        .frame(maxHeight: .infinity, alignment: .top)
         .background(Color("SpotifyBlack")
             .edgesIgnoringSafeArea(.all))
     }
@@ -41,10 +42,7 @@ private extension SearchView {
                 }
             )
         }
-        .padding()
-        .background(Color.gray)
-        .foregroundColor(Color("SpotifyWhite"))
-        .cornerRadius(2)
+        .style(SimpleTFStyle())
     }
     
     var results: some View {

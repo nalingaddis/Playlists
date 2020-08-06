@@ -23,33 +23,19 @@ enum TokenError: Error {
 struct TokenRequest: Request {
     typealias ResponseType = DecodableResponse<Token>
     
-    let
-        clientId = "73513868bd4e4730b2246b6961d0b592",
-        clientSecret = "b2c33f66bf444d50884daa41be3a13b6"
-    
     var path: String = "https://accounts.spotify.com/api/token"
     var method: HTTPMethod = HTTPMethod.POST
     var contentType: ContentType = .urlencoded
     var headers: [String : String]?
     var parameters: [String : Any]?
     
-    init(_ code: String) throws {
-        guard let redirectURI = LoginRequest().parameters?["redirect_uri"] else {
-            throw TokenError.missingRedirectURI
-        }
-        
+    init(code: String, verfier: String) {
         parameters = [
+            "client_id": Authenticator.clientID,
             "grant_type": "authorization_code",
             "code": code,
-            "redirect_uri": redirectURI
-        ]
-        
-        guard let clientData = String(clientId+":"+clientSecret).data(using: .utf8)?.base64EncodedString() else {
-            throw TokenError.clientData
-        }
-        
-        headers = [
-            "Authorization": "Basic \(clientData)"
+            "redirect_uri": LoginURI.redirectURI,
+            "code_verifier": verfier
         ]
     }
 }

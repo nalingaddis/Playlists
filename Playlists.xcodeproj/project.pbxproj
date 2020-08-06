@@ -7,14 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB01E3D424DA5E82001E3E9C /* TextFieldStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB01E3D324DA5E82001E3E9C /* TextFieldStyles.swift */; };
+		AB01E3D624DAFBD1001E3E9C /* Refresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB01E3D524DAFBD1001E3E9C /* Refresh.swift */; };
+		AB01E3D824DB02FB001E3E9C /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB01E3D724DB02FB001E3E9C /* Challenge.swift */; };
 		AB2A0DC224D1D79100DA5167 /* Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2A0DC124D1D79100DA5167 /* Snapshot.swift */; };
 		AB2A0DC624D5E20C00DA5167 /* CreatePlaylistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2A0DC524D5E20C00DA5167 /* CreatePlaylistView.swift */; };
-		AB2A0DC924D7418100DA5167 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2A0DC824D7418100DA5167 /* Button.swift */; };
+		AB2A0DC924D7418100DA5167 /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2A0DC824D7418100DA5167 /* ButtonStyles.swift */; };
 		AB2A0DD024D750EB00DA5167 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB2A0DCF24D750EB00DA5167 /* Colors.xcassets */; };
 		AB2A0DD224D7524100DA5167 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB2A0DD124D7524100DA5167 /* Icons.xcassets */; };
 		AB2A0DD424D7528D00DA5167 /* Logos.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB2A0DD324D7528D00DA5167 /* Logos.xcassets */; };
 		AB2A0DD624D7605700DA5167 /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2A0DD524D7605700DA5167 /* HostingController.swift */; };
-		AB2A0DDA24D8B95000DA5167 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2A0DD924D8B95000DA5167 /* TextField.swift */; };
+		AB2A0DDA24D8B95000DA5167 /* ColorTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2A0DD924D8B95000DA5167 /* ColorTextField.swift */; };
+		AB2A0DDC24DA4A5C00DA5167 /* Headers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2A0DDB24DA4A5C00DA5167 /* Headers.swift */; };
+		AB2A0DDE24DA4D3200DA5167 /* TextStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2A0DDD24DA4D3200DA5167 /* TextStyles.swift */; };
+		AB2A0DE124DA50E200DA5167 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2A0DE024DA50E200DA5167 /* SettingsView.swift */; };
+		AB2A0DE324DA51CD00DA5167 /* Styling.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2A0DE224DA51CD00DA5167 /* Styling.swift */; };
+		AB2A0DE624DA558500DA5167 /* NavigationViewStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2A0DE524DA558500DA5167 /* NavigationViewStyles.swift */; };
 		ABCEDC6824C7F7BE002568C4 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCEDC6724C7F7BE002568C4 /* Stack.swift */; };
 		ABCEDC6A24C91AD8002568C4 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCEDC6924C91AD8002568C4 /* HomeView.swift */; };
 		ABCEDC6C24C92B82002568C4 /* SearchItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCEDC6B24C92B82002568C4 /* SearchItemView.swift */; };
@@ -78,14 +86,22 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AB01E3D324DA5E82001E3E9C /* TextFieldStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldStyles.swift; sourceTree = "<group>"; };
+		AB01E3D524DAFBD1001E3E9C /* Refresh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Refresh.swift; sourceTree = "<group>"; };
+		AB01E3D724DB02FB001E3E9C /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
 		AB2A0DC124D1D79100DA5167 /* Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snapshot.swift; sourceTree = "<group>"; };
 		AB2A0DC524D5E20C00DA5167 /* CreatePlaylistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlaylistView.swift; sourceTree = "<group>"; };
-		AB2A0DC824D7418100DA5167 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		AB2A0DC824D7418100DA5167 /* ButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
 		AB2A0DCF24D750EB00DA5167 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		AB2A0DD124D7524100DA5167 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		AB2A0DD324D7528D00DA5167 /* Logos.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Logos.xcassets; sourceTree = "<group>"; };
 		AB2A0DD524D7605700DA5167 /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
-		AB2A0DD924D8B95000DA5167 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		AB2A0DD924D8B95000DA5167 /* ColorTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTextField.swift; sourceTree = "<group>"; };
+		AB2A0DDB24DA4A5C00DA5167 /* Headers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Headers.swift; sourceTree = "<group>"; };
+		AB2A0DDD24DA4D3200DA5167 /* TextStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStyles.swift; sourceTree = "<group>"; };
+		AB2A0DE024DA50E200DA5167 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		AB2A0DE224DA51CD00DA5167 /* Styling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styling.swift; sourceTree = "<group>"; };
+		AB2A0DE524DA558500DA5167 /* NavigationViewStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewStyles.swift; sourceTree = "<group>"; };
 		ABCEDC6724C7F7BE002568C4 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		ABCEDC6924C91AD8002568C4 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		ABCEDC6B24C92B82002568C4 /* SearchItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemView.swift; sourceTree = "<group>"; };
@@ -152,13 +168,34 @@
 		AB2A0DC724D7412800DA5167 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
-				AB2A0DC824D7418100DA5167 /* Button.swift */,
-				AB2A0DD924D8B95000DA5167 /* TextField.swift */,
+				AB2A0DE424DA530500DA5167 /* Styles */,
+				AB2A0DD924D8B95000DA5167 /* ColorTextField.swift */,
+				AB2A0DDB24DA4A5C00DA5167 /* Headers.swift */,
 				AB2A0DCF24D750EB00DA5167 /* Colors.xcassets */,
 				AB2A0DD124D7524100DA5167 /* Icons.xcassets */,
 				AB2A0DD324D7528D00DA5167 /* Logos.xcassets */,
 			);
 			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		AB2A0DDF24DA50B100DA5167 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				AB2A0DE024DA50E200DA5167 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		AB2A0DE424DA530500DA5167 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				AB2A0DE224DA51CD00DA5167 /* Styling.swift */,
+				AB2A0DC824D7418100DA5167 /* ButtonStyles.swift */,
+				AB2A0DDD24DA4D3200DA5167 /* TextStyles.swift */,
+				AB2A0DE524DA558500DA5167 /* NavigationViewStyles.swift */,
+				AB01E3D324DA5E82001E3E9C /* TextFieldStyles.swift */,
+			);
+			path = Styles;
 			sourceTree = "<group>";
 		};
 		ABCEDC6624C7F794002568C4 /* Stack */ = {
@@ -178,9 +215,10 @@
 			children = (
 				ABFBBA3824BD7C56004B2FDF /* Playlists */,
 				AB2A0DC724D7412800DA5167 /* UIComponents */,
+				AB2A0DDF24DA50B100DA5167 /* Settings */,
 				ABCEDC6624C7F794002568C4 /* Stack */,
-				ABFBBA9F24C71611004B2FDF /* SpotifyAPI */,
 				ABFBBA9624C6876E004B2FDF /* Search */,
+				ABFBBA9F24C71611004B2FDF /* SpotifyAPI */,
 				ABFBBA8B24BFE45B004B2FDF /* OAuth */,
 				ABFBBA7924BE982F004B2FDF /* Networking */,
 				ABFBBA3724BD7C56004B2FDF /* Products */,
@@ -249,6 +287,8 @@
 				ABFBBA9224C33ED2004B2FDF /* Keychain.swift */,
 				ABFBBA8E24BFED77004B2FDF /* Login.swift */,
 				ABFBBA9024BFEDBA004B2FDF /* Token.swift */,
+				AB01E3D524DAFBD1001E3E9C /* Refresh.swift */,
+				AB01E3D724DB02FB001E3E9C /* Challenge.swift */,
 			);
 			path = OAuth;
 			sourceTree = "<group>";
@@ -422,8 +462,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB2A0DE124DA50E200DA5167 /* SettingsView.swift in Sources */,
 				ABCEDC7824CF16B9002568C4 /* User.swift in Sources */,
+				AB2A0DE624DA558500DA5167 /* NavigationViewStyles.swift in Sources */,
 				ABFBBA8824BECB77004B2FDF /* Response.swift in Sources */,
+				AB2A0DDE24DA4D3200DA5167 /* TextStyles.swift in Sources */,
+				AB01E3D424DA5E82001E3E9C /* TextFieldStyles.swift in Sources */,
 				ABCEDC6E24C92BAE002568C4 /* StackView.swift in Sources */,
 				ABFBBA3A24BD7C56004B2FDF /* AppDelegate.swift in Sources */,
 				ABFBBA7C24BE9854004B2FDF /* Request.swift in Sources */,
@@ -436,20 +480,24 @@
 				ABFBBAA924C7190B004B2FDF /* Page.swift in Sources */,
 				ABCEDC7224CF13D9002568C4 /* SaveView.swift in Sources */,
 				ABFBBA8D24BFE521004B2FDF /* Authenticator.swift in Sources */,
+				AB01E3D624DAFBD1001E3E9C /* Refresh.swift in Sources */,
 				AB2A0DC224D1D79100DA5167 /* Snapshot.swift in Sources */,
 				ABFBBAAC24C7D538004B2FDF /* Semaphore.swift in Sources */,
+				AB2A0DE324DA51CD00DA5167 /* Styling.swift in Sources */,
+				AB2A0DDC24DA4A5C00DA5167 /* Headers.swift in Sources */,
 				ABFBBA3E24BD7C56004B2FDF /* LoginView.swift in Sources */,
 				ABFBBA9E24C6A16A004B2FDF /* SpotifyRequest.swift in Sources */,
 				ABCEDC6A24C91AD8002568C4 /* HomeView.swift in Sources */,
-				AB2A0DDA24D8B95000DA5167 /* TextField.swift in Sources */,
+				AB2A0DDA24D8B95000DA5167 /* ColorTextField.swift in Sources */,
 				ABFBBAA124C71622004B2FDF /* Track.swift in Sources */,
 				ABFBBA8F24BFED77004B2FDF /* Login.swift in Sources */,
+				AB01E3D824DB02FB001E3E9C /* Challenge.swift in Sources */,
 				ABCEDC7024C92BBE002568C4 /* StackItemView.swift in Sources */,
 				ABCEDC7624CF166C002568C4 /* Playlist.swift in Sources */,
 				ABFBBAA524C71650004B2FDF /* Artist.swift in Sources */,
 				ABFBBA9124BFEDBA004B2FDF /* Token.swift in Sources */,
 				ABCEDC7424CF1603002568C4 /* Search.swift in Sources */,
-				AB2A0DC924D7418100DA5167 /* Button.swift in Sources */,
+				AB2A0DC924D7418100DA5167 /* ButtonStyles.swift in Sources */,
 				AB2A0DC624D5E20C00DA5167 /* CreatePlaylistView.swift in Sources */,
 				ABCEDC6824C7F7BE002568C4 /* Stack.swift in Sources */,
 				ABCEDC7A24CF1C02002568C4 /* SpotiFriend.swift in Sources */,

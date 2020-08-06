@@ -40,9 +40,7 @@ struct SaveView: View {
             
             playlistsList
         }
-        .navigationBarHidden(true)
-        .navigationBarTitle("Select A Playlist")
-        .background(Color("SpotifyBlack").edgesIgnoringSafeArea(.all))
+        .style(NoHeaderNavStyle())
         .alert(isPresented: $alertShowing) {
             Alert(title: Text("Songs added successfully"))
         }
@@ -62,18 +60,13 @@ private extension SaveView {
     var backButton: some View {
         Button(action: { self.presentation.wrappedValue.dismiss() }) {
             Image(systemName: "chevron.left")
+            .style(IconButtonStyle())
         }
-        .padding()
-        .foregroundColor(Color("SpotifyWhite"))
     }
     
     var title: some View {
         Text("Select A Playlist")
-        .padding()
-        .frame(maxWidth: .infinity)
-        .foregroundColor(Color("SpotifyWhite"))
-        .font(.title)
-        .cornerRadius(2)
+        .style(TitleStyle())
     }
     
     var addPlaylistButton: some View {
@@ -83,8 +76,7 @@ private extension SaveView {
                 self.presentation.wrappedValue.dismiss()
         }) {
              Image(systemName: "plus")
-             .padding()
-             .foregroundColor(Color("SpotifyWhite"))
+            .style(IconButtonStyle())
         }
     }
     

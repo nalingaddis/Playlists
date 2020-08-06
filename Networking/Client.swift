@@ -31,7 +31,7 @@ struct Client {
         guard let url = request.buildURLRequest() else {
             return completion(.failure(.invalidURL))
         }
-    
+            
         let task = dataTasker.dataTask(with: url) { data, response, error in
             if let error = error {
                 return completion(.failure(.networkError(error)))
@@ -45,6 +45,7 @@ struct Client {
                 let output = try R.ResponseType(input: data, response: response)
                 return completion(.success(output))
             } catch {
+                print(String(data: url.httpBody!, encoding: .utf8))
                 return completion(.failure(.malformedResponse(error)))
             }
         }

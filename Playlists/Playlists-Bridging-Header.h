@@ -10,5 +10,6 @@
 #define Playists_Bridging_Header_h
 
 #import <SpotifyiOS/SpotifyiOS.h>
+#import <CommonCrypto/CommonDigest.h>
 
 #endif /* Playists_Bridging_Header_h */

@@ -13,9 +13,7 @@ struct LoginView: View {
     var body: some View {
         GeometryReader { geo in
             VStack {
-                Text("Login with")
-                    .foregroundColor(Color("SpotifyWhite"))
-                    .font(.title)
+                self.title
                 self.loginButton
             }
             .padding(geo.size.width / 11)
@@ -27,6 +25,11 @@ struct LoginView: View {
         .background(Color("SpotifyBlack"))
         .edgesIgnoringSafeArea(.all)
     }
+    
+    private var title: some View {
+        Text("Login with")
+        .style(TitleStyle())
+    }
         
     private var loginButton: some View {
         GeometryReader { geo in
@@ -36,11 +39,14 @@ struct LoginView: View {
                 Image("Spotify_Logo_RGB_White")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .padding()
-                    .background(Color("SpotifyGreen"))
-                    .cornerRadius(40)
+                    .style(SimpleButtonStyle())
             }
-            .buttonStyle(PlainButtonStyle())
         }
+    }
+}
+
+struct LoginView_Previews: PreviewProvider {
+    static var previews: some View {
+        LoginView()
     }
 }
