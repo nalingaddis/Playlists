@@ -16,54 +16,46 @@ enum AuthenticatorError: Error {
     case requestCreation
 }
 
-struct Authenticator {
+enum Authenticator {
+    static let clientID = "73513868bd4e4730b2246b6961d0b592"
+
     private static let client = Client()
+    private static let codeGenerator = CodeGenerator()
     
     /// Prompts a user login request to begin the authentication process
     static func login() {
-        client.send(LoginRequest()) { result in
-            switch result {
-            case .success(let response):
-                DispatchQueue.main.async {
-                    UIApplication.shared.open(response.data)
-                }
-            case .failure(let clientError):
-                print(clientError)
+        DispatchQueue.main.async {
+            guard let url = LoginURI.buildRUI(codeGenerator.challenge) else {
+                print("Something went wrong")
+                return
             }
+            
+            UIApplication.shared.open(url)
         }
     }
     
     /// Requests access tokens using the callback URL from the user login
     /// - Parameter callback: The callback URL sent after Spotify login
     /// - Throws: `AuthenticationError`
-    static func tokens(using callback: URL, lock: Semaphore) throws {
-        guard let code =
-            URLComponents(url: callback, resolvingAgainstBaseURL: true)?
-                .queryItems?
-                    .first(where: { $0.name == "code" })?
-                        .value
-        else {
-            throw AuthenticatorError.missingCode
-        }
-        
-        do {
-            client.send(try TokenRequest(code)) { result in
-                switch result {
-                case .success(let response):
-                    let token = response.data
-                    do {
-                        try Keychain.store(token.access_token, forKey: "playlists.spotify.access_token")
-                        try Keychain.store(token.refresh_token, forKey: "playlists.spotify.refresh_token")
-                    } catch {
-                        print(error)
-                    }
-                case .failure(let clientError):
-                    print(clientError)
+    static func tokens(using code: String, lock: Semaphore) throws {
+        client.send(TokenRequest(code: code, verfier: codeGenerator.verifier)) { result in
+            switch result {
+            case .success(let response):
+                let token = response.data
+                do {
+                    try Keychain.store(token.access_token, forKey: "playlists.spotify.access_token")
+                    try Keychain.store(token.refresh_token, forKey: "playlists.spotify.refresh_token")
+                } catch {
+                    print(error)
                 }
-                lock.signal()
+            case .failure(let clientError):
+                print(clientError)
             }
-        } catch {
-            throw AuthenticatorError.requestCreation
+            lock.signal()
         }
+    }
+    
+    static func refresh() throws {
+        
     }
 }

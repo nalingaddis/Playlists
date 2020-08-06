@@ -14,21 +14,44 @@ struct StackView: View {
     
     var body: some View {
         NavigationView {
-            VStack{
+            VStack {
+                Text("Playlist Preview")
+                .style(TitleStyle())
+                
+                stackView
+                
                 HStack {
-                    NavigationLink(destination: SaveView().environmentObject(stack)) {
-                        Text("Save")
-                    }
-                    Button(action: {
-                        self.stack.clear()
-                    }) {
-                        Text("Clear")
-                    }
-                }.disabled(self.stack.tracks.isEmpty)
-                ScrollView {
-                    VStack {
-                        ForEach(stack.tracks, id: \.self.id) { StackItemView(track: $0, stack: self.stack) }
-                    }
+                    save
+                    clear
+                }
+                .disabled(self.stack.tracks.isEmpty)
+                .padding()
+            }
+            .style(NoHeaderNavStyle())
+        }
+    }
+    
+    private var save: some View {
+        NavigationLink(destination: SaveView().environmentObject(stack)) {
+            Text("Save")
+            .style(SimpleButtonStyle())
+        }
+    }
+    
+    private var clear: some View {
+        Button(action: {
+            self.stack.clear()
+        }) {
+            Text("Clear")
+            .style(SimpleButtonStyle())
+        }
+    }
+    
+    private var stackView: some View {
+        ScrollView {
+            VStack {
+                ForEach(stack.tracks, id: \.self.id) {
+                    StackItemView(track: $0, stack: self.stack)
                 }
             }
         }

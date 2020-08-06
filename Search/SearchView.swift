@@ -15,37 +15,45 @@ struct SearchView: View {
     @State var data: Search?
     
     var body: some View {
-        VStack {
-            searchBox
-            results
+        VStack(alignment: .leading) {
+            MainHeader(titleString: "Search For Songs", settingsView: EmptyView(), infoView: EmptyView())
+            self.searchBox
+            self.results
         }
+        .frame(maxHeight: .infinity, alignment: .top)
+        .background(Color("SpotifyBlack")
+            .edgesIgnoringSafeArea(.all))
     }
 }
 
 private extension SearchView {
     var searchBox: some View {
-        TextField("Search songs...", text: $text,
-            onCommit: {
-                do {
-                    self.data = try SpotiFriend.search(query: self.text)
-                } catch {
-                    print(error)
+        HStack{
+            Image(systemName: "magnifyingglass")
+            ColorTextField(
+                placeholder: Text("Search").foregroundColor(Color("SpotifyWhite")),
+                text: $text,
+                onCommit: {
+                    do {
+                        self.data = try SpotiFriend.search(query: self.text)
+                    } catch {
+                        print(error)
+                    }
                 }
-            }
-        )
+            )
+        }
+        .style(SimpleTFStyle())
     }
     
     var results: some View {
-        guard let data = data else {
-            return AnyView(EmptyView())
-        }
-        
-        return AnyView(
-            ScrollView {
-                VStack {
-                    ForEach(data.tracks.items, id: \.self.id) { SearchItemView(track: $0, stack: self.stack) }
+        data.map { data in
+            ScrollView() {
+                VStack(alignment: .leading) {
+                    ForEach(data.tracks.items, id: \.self.id) {
+                        SearchItemView(track: $0, stack: self.stack)
+                    }
                 }
             }
-        )
+        }
     }
 }

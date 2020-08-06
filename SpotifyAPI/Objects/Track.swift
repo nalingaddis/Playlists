@@ -17,10 +17,15 @@ struct Track: Pagable {
     let uri: String
     
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
             Text(self.name)
-            Text(self.album.name)
-            Text(self.artists.reduce(self.artists.first?.name ?? "") { $0+", "+$1.name })
+                .lineLimit(1)
+            Text(self.artists.dropFirst().reduce(self.artists.first?.name ?? "") { $0+", "+$1.name })
+                .font(.caption)
+                .lineLimit(1)
         }
+        .padding(10)
+        .foregroundColor(Color("SpotifyWhite"))
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 }

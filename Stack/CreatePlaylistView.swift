@@ -9,23 +9,47 @@
 import SwiftUI
 
 struct CreatePlaylistView: View {
-    @Environment(\.presentationMode) var presentationMode
+    @Environment(\.presentationMode) var presentation
     
     @EnvironmentObject var stack: Stack
     
     @State var name = ""
     @State var description = String("")
     @State var isPrivate = false
-    
     @State var alertShowing = false
+    
+    init() {
+        UISwitch.appearance().onTintColor = UIColor(named: "SpotifyGreen")
+    }
     
     var body: some View {
         VStack{
-            TextField("Name", text: $name)
-            TextField("Description", text: $description)
+            HStack {
+                Button(action: { self.presentation.wrappedValue.dismiss() }) {
+                    Image(systemName: "chevron.left")
+                    .style(IconButtonStyle())
+                }
+                
+                Text("New Playlist")
+                .style(TitleStyle())
+            }
+            
+            ColorTextField(
+                placeholder: Text("Name").foregroundColor(Color("SpotifyWhite")),
+                text: $name)
+                .style(SimpleTFStyle())
+            
+            ColorTextField(
+                placeholder: Text("Description").foregroundColor(Color("SpotifyWhite")),
+                text: $description)
+                .style(SimpleTFStyle())
+                            
             Toggle(isOn: $isPrivate) {
                 Text("Make private")
-            }
+                .padding()
+                .foregroundColor(Color("SpotifyWhite"))
+            }.padding()
+            
             Button(action: {
                 do {
                     let playlist = try SpotiFriend.createPlaylist(name: self.name, description: self.description, isPrivate: self.isPrivate)
@@ -33,13 +57,17 @@ struct CreatePlaylistView: View {
                 } catch {
                     print(error)
                 }
-                self.presentationMode.wrappedValue.dismiss()
+                self.presentation.wrappedValue.dismiss()
                 self.alertShowing = true
             }) {
                 Text("Create and Add")
+                .style(SimpleButtonStyle())
             }
+            .padding()
             .disabled(name.isEmpty)
         }
+        .frame(maxHeight: .infinity)
+        .style(NoHeaderNavStyle())
         .alert(isPresented: $alertShowing) {
             Alert(title: Text("Songs added successfully"))
         }
