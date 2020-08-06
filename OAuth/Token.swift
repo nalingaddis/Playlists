@@ -8,15 +8,13 @@
 
 import Foundation
 
-enum TokenError: Error {
-    /// Failed to find the `redirect_uri` from the login request
-    case missingRedirectURI
-    /// Failed to convert the client id/secret into data
-    case clientData
-    /// A status code other than `200` was returned
-    case statusCode(Int)
-    /// The response does not contain data
-    case missingData
+/// Model for token response data
+struct Token: Decodable {
+    let access_token: String
+    let token_type: String
+    let scope: String
+    let expires_in: Int
+    let refresh_token: String
 }
 
 /// Request for access and refresh tokens
@@ -40,11 +38,20 @@ struct TokenRequest: Request {
     }
 }
 
-/// Model for token response data
-struct Token: Decodable {
-    let access_token: String
-    let token_type: String
-    let scope: String
-    let expires_in: Int
-    let refresh_token: String
+struct RefreshRequest: Request {
+    typealias ResponseType = DecodableResponse<Token>
+    
+    var path: String = "https://accounts.spotify.com/api/token"
+    var method: HTTPMethod = HTTPMethod.POST
+    var contentType: ContentType = .urlencoded
+    var headers: [String : String]?
+    var parameters: [String : Any]?
+    
+    init(_ refreshToken: String) {
+        parameters = [
+            "grant_type": "refresh_token",
+            "refresh_token": refreshToken,
+            "client_id": Authenticator.clientID
+        ]
+    }
 }

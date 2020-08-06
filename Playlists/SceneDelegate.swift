@@ -20,11 +20,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         
         /// If they have logged in before, fetch their code
-//        if let refreshToken = try? Keychain.fetch(key: "playlists.spotify.refresh_token") {
-//            Authenticator.refresh(token: refreshToken)
-//        } else {
+        if let refreshToken = try? Keychain.fetch(key: "playlists.spotify.refresh_token") {
+            do {
+                try Authenticator.refresh(refreshToken)
+                changeView(to: HomeView(), inScene: scene)
+            } catch {
+                print(error)
+            }
+        } else {
             changeView(to: LoginView(), inScene: scene)
-//        }
+        }
     }
     
     /// Change the view in scene `scene` to the given `view`
@@ -63,9 +68,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     /// Authenticate with a user's code
     func authenticate(with code: String, scene: UIScene) {
         do {
-            let semaphore = Semaphore()
-            try Authenticator.tokens(using: code, lock: semaphore)
-            semaphore.wait()
+            try Authenticator.tokens(using: code)
             changeView(to: HomeView(), inScene: scene)
         } catch {
             print(error)

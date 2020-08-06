@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		AB01E3D424DA5E82001E3E9C /* TextFieldStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB01E3D324DA5E82001E3E9C /* TextFieldStyles.swift */; };
-		AB01E3D624DAFBD1001E3E9C /* Refresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB01E3D524DAFBD1001E3E9C /* Refresh.swift */; };
 		AB01E3D824DB02FB001E3E9C /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB01E3D724DB02FB001E3E9C /* Challenge.swift */; };
 		AB2A0DC224D1D79100DA5167 /* Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2A0DC124D1D79100DA5167 /* Snapshot.swift */; };
 		AB2A0DC624D5E20C00DA5167 /* CreatePlaylistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2A0DC524D5E20C00DA5167 /* CreatePlaylistView.swift */; };
@@ -87,7 +86,6 @@
 
 /* Begin PBXFileReference section */
 		AB01E3D324DA5E82001E3E9C /* TextFieldStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldStyles.swift; sourceTree = "<group>"; };
-		AB01E3D524DAFBD1001E3E9C /* Refresh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Refresh.swift; sourceTree = "<group>"; };
 		AB01E3D724DB02FB001E3E9C /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
 		AB2A0DC124D1D79100DA5167 /* Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snapshot.swift; sourceTree = "<group>"; };
 		AB2A0DC524D5E20C00DA5167 /* CreatePlaylistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlaylistView.swift; sourceTree = "<group>"; };
@@ -287,7 +285,6 @@
 				ABFBBA9224C33ED2004B2FDF /* Keychain.swift */,
 				ABFBBA8E24BFED77004B2FDF /* Login.swift */,
 				ABFBBA9024BFEDBA004B2FDF /* Token.swift */,
-				AB01E3D524DAFBD1001E3E9C /* Refresh.swift */,
 				AB01E3D724DB02FB001E3E9C /* Challenge.swift */,
 			);
 			path = OAuth;
@@ -480,7 +477,6 @@
 				ABFBBAA924C7190B004B2FDF /* Page.swift in Sources */,
 				ABCEDC7224CF13D9002568C4 /* SaveView.swift in Sources */,
 				ABFBBA8D24BFE521004B2FDF /* Authenticator.swift in Sources */,
-				AB01E3D624DAFBD1001E3E9C /* Refresh.swift in Sources */,
 				AB2A0DC224D1D79100DA5167 /* Snapshot.swift in Sources */,
 				ABFBBAAC24C7D538004B2FDF /* Semaphore.swift in Sources */,
 				AB2A0DE324DA51CD00DA5167 /* Styling.swift in Sources */,

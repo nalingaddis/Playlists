@@ -6,6 +6,7 @@
 //  Copyright © 2020 Nalin Gaddis. All rights reserved.
 //
 
+import Combine
 import Dispatch
 import Foundation
 
@@ -22,7 +23,6 @@ enum Authenticator {
     private static let client = Client()
     private static let codeGenerator = CodeGenerator()
     
-    /// Prompts a user login request to begin the authentication process
     static func login() {
         DispatchQueue.main.async {
             guard let url = LoginURI.buildRUI(codeGenerator.challenge) else {
@@ -34,28 +34,42 @@ enum Authenticator {
         }
     }
     
-    /// Requests access tokens using the callback URL from the user login
-    /// - Parameter callback: The callback URL sent after Spotify login
-    /// - Throws: `AuthenticationError`
-    static func tokens(using code: String, lock: Semaphore) throws {
+    static func tokens(using code: String) throws {
+        let lock = Semaphore()
+        
         client.send(TokenRequest(code: code, verfier: codeGenerator.verifier)) { result in
             switch result {
             case .success(let response):
-                let token = response.data
-                do {
-                    try Keychain.store(token.access_token, forKey: "playlists.spotify.access_token")
-                    try Keychain.store(token.refresh_token, forKey: "playlists.spotify.refresh_token")
-                } catch {
-                    print(error)
-                }
+                store(response.data)
             case .failure(let clientError):
                 print(clientError)
             }
             lock.signal()
         }
+        lock.wait()
     }
     
-    static func refresh() throws {
+    static func refresh(_ token: String) throws {
+        let lock = Semaphore()
         
+        client.send(RefreshRequest(token)) { result in
+            switch result {
+            case .success(let response):
+                store(response.data)
+            case .failure(let clientError):
+                print(clientError)
+            }
+            lock.signal()
+        }
+        lock.wait()
+    }
+    
+    private static func store( _ token: Token) {
+        do {
+            try Keychain.store(token.access_token, forKey: "playlists.spotify.access_token")
+            try Keychain.store(token.refresh_token, forKey: "playlists.spotify.refresh_token")
+        } catch {
+            print(error)
+        }
     }
 }
