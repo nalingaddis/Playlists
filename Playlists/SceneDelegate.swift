@@ -19,15 +19,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         
-        /// If they have logged in before, fetch their code
-        if let refreshToken = try? Keychain.fetch(key: "playlists.spotify.refresh_token") {
-            do {
-                try Authenticator.refresh(refreshToken)
-                changeView(to: HomeView(), inScene: scene)
-            } catch {
-                print(error)
-            }
-        } else {
+        /// If they have logged in before, fetch the refresh token
+        do {
+            let refreshToken = try Keychain.fetch(key: "playlists.spotify.refresh_token")
+            try Authenticator.refresh(refreshToken)
+            changeView(to: HomeView(), inScene: scene)
+        } catch {
             changeView(to: LoginView(), inScene: scene)
         }
     }
