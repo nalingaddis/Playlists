@@ -14,20 +14,17 @@ struct StackView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                Text("Playlist Preview")
-                .style(TitleStyle())
-                
-                stackView
-                
+            Screen(MainHeader(title: "Playlist Preview", infoView: EmptyView())) {
+                self.stackView
+
                 HStack {
-                    save
-                    clear
+                    self.save
+                    self.clear
                 }
                 .disabled(self.stack.tracks.isEmpty)
+                .saturation(self.stack.tracks.isEmpty ? 0.5 : 1)
                 .padding()
             }
-            .style(NoHeaderNavStyle())
         }
     }
     

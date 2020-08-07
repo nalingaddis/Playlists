@@ -45,7 +45,6 @@ struct Client {
                 let output = try R.ResponseType(input: data, response: response)
                 return completion(.success(output))
             } catch {
-                print(String(data: url.httpBody!, encoding: .utf8))
                 return completion(.failure(.malformedResponse(error)))
             }
         }

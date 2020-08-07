@@ -64,6 +64,10 @@ enum Authenticator {
         lock.wait()
     }
     
+    static func logout() throws {
+        try Keychain.delete(key: "playlists.spotify.refresh_token")
+    }
+    
     private static func store( _ token: Token) {
         do {
             try Keychain.store(token.access_token, forKey: "playlists.spotify.access_token")

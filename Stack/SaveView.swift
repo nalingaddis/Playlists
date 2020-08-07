@@ -9,8 +9,8 @@
 import SwiftUI
 
 struct SaveView: View {
-    @EnvironmentObject var stack: Stack
     @Environment(\.presentationMode) var presentation
+    @EnvironmentObject var stack: Stack
     @State var alertShowing = false
     
     var playlists: [Playlist] {
@@ -31,16 +31,9 @@ struct SaveView: View {
     }
     
     var body: some View {
-        VStack {
-            HStack {
-                backButton
-                title
-                addPlaylistButton
-            }
-            
-            playlistsList
+        Screen(NavHeader("Select A Playlist", right: self.addPlaylistButton)) {
+            self.playlistsList
         }
-        .style(NoHeaderNavStyle())
         .alert(isPresented: $alertShowing) {
             Alert(title: Text("Songs added successfully"))
         }
@@ -54,9 +47,7 @@ struct SaveView: View {
         }
         catch { print(error) }
     }
-}
-
-private extension SaveView {
+    
     var backButton: some View {
         Button(action: { self.presentation.wrappedValue.dismiss() }) {
             Image(systemName: "chevron.left")
@@ -72,9 +63,7 @@ private extension SaveView {
     var addPlaylistButton: some View {
         NavigationLink(destination: CreatePlaylistView()
             .environmentObject(self.stack)
-            .onDisappear {
-                self.presentation.wrappedValue.dismiss()
-        }) {
+        ) {
              Image(systemName: "plus")
             .style(IconButtonStyle())
         }

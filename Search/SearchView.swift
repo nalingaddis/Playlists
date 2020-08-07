@@ -15,14 +15,12 @@ struct SearchView: View {
     @State var data: Search?
     
     var body: some View {
-        VStack(alignment: .leading) {
-            MainHeader(titleString: "Search For Songs", settingsView: EmptyView(), infoView: EmptyView())
-            self.searchBox
-            self.results
+        NavigationView{
+            Screen(MainHeader(title: "Search For Songs", infoView: EmptyView())) {
+                self.searchBox
+                self.results
+            }
         }
-        .frame(maxHeight: .infinity, alignment: .top)
-        .background(Color("SpotifyBlack")
-            .edgesIgnoringSafeArea(.all))
     }
 }
 
