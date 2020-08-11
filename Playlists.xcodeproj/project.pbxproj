@@ -10,6 +10,7 @@
 		AB01E3D424DA5E82001E3E9C /* TextFieldStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB01E3D324DA5E82001E3E9C /* TextFieldStyles.swift */; };
 		AB01E3D824DB02FB001E3E9C /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB01E3D724DB02FB001E3E9C /* Challenge.swift */; };
 		AB01E3DA24DDB300001E3E9C /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB01E3D924DDB300001E3E9C /* Screen.swift */; };
+		AB01E3DF24DE24E5001E3E9C /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB01E3DE24DE24E5001E3E9C /* HelpView.swift */; };
 		AB2A0DC224D1D79100DA5167 /* Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2A0DC124D1D79100DA5167 /* Snapshot.swift */; };
 		AB2A0DC624D5E20C00DA5167 /* CreatePlaylistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2A0DC524D5E20C00DA5167 /* CreatePlaylistView.swift */; };
 		AB2A0DC924D7418100DA5167 /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2A0DC824D7418100DA5167 /* ButtonStyles.swift */; };
@@ -89,6 +90,7 @@
 		AB01E3D324DA5E82001E3E9C /* TextFieldStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldStyles.swift; sourceTree = "<group>"; };
 		AB01E3D724DB02FB001E3E9C /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
 		AB01E3D924DDB300001E3E9C /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
+		AB01E3DE24DE24E5001E3E9C /* HelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpView.swift; sourceTree = "<group>"; };
 		AB2A0DC124D1D79100DA5167 /* Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snapshot.swift; sourceTree = "<group>"; };
 		AB2A0DC524D5E20C00DA5167 /* CreatePlaylistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlaylistView.swift; sourceTree = "<group>"; };
 		AB2A0DC824D7418100DA5167 /* ButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
@@ -165,6 +167,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AB01E3DD24DE24C8001E3E9C /* Help */ = {
+			isa = PBXGroup;
+			children = (
+				AB01E3DE24DE24E5001E3E9C /* HelpView.swift */,
+			);
+			path = Help;
+			sourceTree = "<group>";
+		};
 		AB2A0DC724D7412800DA5167 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
@@ -216,6 +226,7 @@
 			children = (
 				ABFBBA3824BD7C56004B2FDF /* Playlists */,
 				AB2A0DC724D7412800DA5167 /* UIComponents */,
+				AB01E3DD24DE24C8001E3E9C /* Help */,
 				AB2A0DDF24DA50B100DA5167 /* Settings */,
 				ABCEDC6624C7F794002568C4 /* Stack */,
 				ABFBBA9624C6876E004B2FDF /* Search */,
@@ -502,6 +513,7 @@
 				ABCEDC6824C7F7BE002568C4 /* Stack.swift in Sources */,
 				ABCEDC7A24CF1C02002568C4 /* SpotiFriend.swift in Sources */,
 				ABFBBA9324C33ED2004B2FDF /* Keychain.swift in Sources */,
+				AB01E3DF24DE24E5001E3E9C /* HelpView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -666,6 +678,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = 3MUVZ935H2;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
 				INFOPLIST_FILE = Playlists/Info.plist;
@@ -688,6 +701,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = 3MUVZ935H2;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
 				INFOPLIST_FILE = Playlists/Info.plist;

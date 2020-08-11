@@ -16,7 +16,7 @@ struct SearchView: View {
     
     var body: some View {
         NavigationView{
-            Screen(MainHeader(title: "Search For Songs", infoView: EmptyView())) {
+            Screen(MainHeader(title: "Search For Songs")) {
                 self.searchBox
                 self.results
             }

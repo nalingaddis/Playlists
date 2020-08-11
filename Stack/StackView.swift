@@ -14,7 +14,7 @@ struct StackView: View {
     
     var body: some View {
         NavigationView {
-            Screen(MainHeader(title: "Playlist Preview", infoView: EmptyView())) {
+            Screen(MainHeader(title: "Playlist Preview")) {
                 self.stackView
 
                 HStack {

@@ -32,9 +32,8 @@ extension Header {
     }
 }
 
-struct MainHeader<InfoView: View>: Header {
+struct MainHeader: Header {
     var title: String
-    var infoView: InfoView
     
     var left: some View {
         NavigationLink(destination: SettingsView()){
@@ -44,7 +43,7 @@ struct MainHeader<InfoView: View>: Header {
     }
     
     var right: some View {
-        NavigationLink(destination: infoView) {
+        NavigationLink(destination: HelpView()) {
             Image(systemName: "questionmark")
             .style(IconButtonStyle())
         }
