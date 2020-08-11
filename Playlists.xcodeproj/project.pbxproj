@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		AB01E3D424DA5E82001E3E9C /* TextFieldStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB01E3D324DA5E82001E3E9C /* TextFieldStyles.swift */; };
-		AB01E3D624DAFBD1001E3E9C /* Refresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB01E3D524DAFBD1001E3E9C /* Refresh.swift */; };
 		AB01E3D824DB02FB001E3E9C /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB01E3D724DB02FB001E3E9C /* Challenge.swift */; };
+		AB01E3DA24DDB300001E3E9C /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB01E3D924DDB300001E3E9C /* Screen.swift */; };
+		AB01E3DF24DE24E5001E3E9C /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB01E3DE24DE24E5001E3E9C /* HelpView.swift */; };
 		AB2A0DC224D1D79100DA5167 /* Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2A0DC124D1D79100DA5167 /* Snapshot.swift */; };
 		AB2A0DC624D5E20C00DA5167 /* CreatePlaylistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2A0DC524D5E20C00DA5167 /* CreatePlaylistView.swift */; };
 		AB2A0DC924D7418100DA5167 /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2A0DC824D7418100DA5167 /* ButtonStyles.swift */; };
@@ -18,7 +19,7 @@
 		AB2A0DD424D7528D00DA5167 /* Logos.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB2A0DD324D7528D00DA5167 /* Logos.xcassets */; };
 		AB2A0DD624D7605700DA5167 /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2A0DD524D7605700DA5167 /* HostingController.swift */; };
 		AB2A0DDA24D8B95000DA5167 /* ColorTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2A0DD924D8B95000DA5167 /* ColorTextField.swift */; };
-		AB2A0DDC24DA4A5C00DA5167 /* Headers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2A0DDB24DA4A5C00DA5167 /* Headers.swift */; };
+		AB2A0DDC24DA4A5C00DA5167 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2A0DDB24DA4A5C00DA5167 /* Header.swift */; };
 		AB2A0DDE24DA4D3200DA5167 /* TextStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2A0DDD24DA4D3200DA5167 /* TextStyles.swift */; };
 		AB2A0DE124DA50E200DA5167 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2A0DE024DA50E200DA5167 /* SettingsView.swift */; };
 		AB2A0DE324DA51CD00DA5167 /* Styling.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2A0DE224DA51CD00DA5167 /* Styling.swift */; };
@@ -87,8 +88,9 @@
 
 /* Begin PBXFileReference section */
 		AB01E3D324DA5E82001E3E9C /* TextFieldStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldStyles.swift; sourceTree = "<group>"; };
-		AB01E3D524DAFBD1001E3E9C /* Refresh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Refresh.swift; sourceTree = "<group>"; };
 		AB01E3D724DB02FB001E3E9C /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
+		AB01E3D924DDB300001E3E9C /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
+		AB01E3DE24DE24E5001E3E9C /* HelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpView.swift; sourceTree = "<group>"; };
 		AB2A0DC124D1D79100DA5167 /* Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snapshot.swift; sourceTree = "<group>"; };
 		AB2A0DC524D5E20C00DA5167 /* CreatePlaylistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlaylistView.swift; sourceTree = "<group>"; };
 		AB2A0DC824D7418100DA5167 /* ButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
@@ -97,7 +99,7 @@
 		AB2A0DD324D7528D00DA5167 /* Logos.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Logos.xcassets; sourceTree = "<group>"; };
 		AB2A0DD524D7605700DA5167 /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
 		AB2A0DD924D8B95000DA5167 /* ColorTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTextField.swift; sourceTree = "<group>"; };
-		AB2A0DDB24DA4A5C00DA5167 /* Headers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Headers.swift; sourceTree = "<group>"; };
+		AB2A0DDB24DA4A5C00DA5167 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		AB2A0DDD24DA4D3200DA5167 /* TextStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStyles.swift; sourceTree = "<group>"; };
 		AB2A0DE024DA50E200DA5167 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		AB2A0DE224DA51CD00DA5167 /* Styling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styling.swift; sourceTree = "<group>"; };
@@ -165,12 +167,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AB01E3DD24DE24C8001E3E9C /* Help */ = {
+			isa = PBXGroup;
+			children = (
+				AB01E3DE24DE24E5001E3E9C /* HelpView.swift */,
+			);
+			path = Help;
+			sourceTree = "<group>";
+		};
 		AB2A0DC724D7412800DA5167 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
 				AB2A0DE424DA530500DA5167 /* Styles */,
 				AB2A0DD924D8B95000DA5167 /* ColorTextField.swift */,
-				AB2A0DDB24DA4A5C00DA5167 /* Headers.swift */,
+				AB2A0DDB24DA4A5C00DA5167 /* Header.swift */,
+				AB01E3D924DDB300001E3E9C /* Screen.swift */,
 				AB2A0DCF24D750EB00DA5167 /* Colors.xcassets */,
 				AB2A0DD124D7524100DA5167 /* Icons.xcassets */,
 				AB2A0DD324D7528D00DA5167 /* Logos.xcassets */,
@@ -215,6 +226,7 @@
 			children = (
 				ABFBBA3824BD7C56004B2FDF /* Playlists */,
 				AB2A0DC724D7412800DA5167 /* UIComponents */,
+				AB01E3DD24DE24C8001E3E9C /* Help */,
 				AB2A0DDF24DA50B100DA5167 /* Settings */,
 				ABCEDC6624C7F794002568C4 /* Stack */,
 				ABFBBA9624C6876E004B2FDF /* Search */,
@@ -287,7 +299,6 @@
 				ABFBBA9224C33ED2004B2FDF /* Keychain.swift */,
 				ABFBBA8E24BFED77004B2FDF /* Login.swift */,
 				ABFBBA9024BFEDBA004B2FDF /* Token.swift */,
-				AB01E3D524DAFBD1001E3E9C /* Refresh.swift */,
 				AB01E3D724DB02FB001E3E9C /* Challenge.swift */,
 			);
 			path = OAuth;
@@ -480,11 +491,10 @@
 				ABFBBAA924C7190B004B2FDF /* Page.swift in Sources */,
 				ABCEDC7224CF13D9002568C4 /* SaveView.swift in Sources */,
 				ABFBBA8D24BFE521004B2FDF /* Authenticator.swift in Sources */,
-				AB01E3D624DAFBD1001E3E9C /* Refresh.swift in Sources */,
 				AB2A0DC224D1D79100DA5167 /* Snapshot.swift in Sources */,
 				ABFBBAAC24C7D538004B2FDF /* Semaphore.swift in Sources */,
 				AB2A0DE324DA51CD00DA5167 /* Styling.swift in Sources */,
-				AB2A0DDC24DA4A5C00DA5167 /* Headers.swift in Sources */,
+				AB2A0DDC24DA4A5C00DA5167 /* Header.swift in Sources */,
 				ABFBBA3E24BD7C56004B2FDF /* LoginView.swift in Sources */,
 				ABFBBA9E24C6A16A004B2FDF /* SpotifyRequest.swift in Sources */,
 				ABCEDC6A24C91AD8002568C4 /* HomeView.swift in Sources */,
@@ -497,11 +507,13 @@
 				ABFBBAA524C71650004B2FDF /* Artist.swift in Sources */,
 				ABFBBA9124BFEDBA004B2FDF /* Token.swift in Sources */,
 				ABCEDC7424CF1603002568C4 /* Search.swift in Sources */,
+				AB01E3DA24DDB300001E3E9C /* Screen.swift in Sources */,
 				AB2A0DC924D7418100DA5167 /* ButtonStyles.swift in Sources */,
 				AB2A0DC624D5E20C00DA5167 /* CreatePlaylistView.swift in Sources */,
 				ABCEDC6824C7F7BE002568C4 /* Stack.swift in Sources */,
 				ABCEDC7A24CF1C02002568C4 /* SpotiFriend.swift in Sources */,
 				ABFBBA9324C33ED2004B2FDF /* Keychain.swift in Sources */,
+				AB01E3DF24DE24E5001E3E9C /* HelpView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -666,6 +678,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = 3MUVZ935H2;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
 				INFOPLIST_FILE = Playlists/Info.plist;
@@ -678,7 +691,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Playlists/Playlists-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -688,6 +701,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = 3MUVZ935H2;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
 				INFOPLIST_FILE = Playlists/Info.plist;
@@ -700,7 +714,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Playlists/Playlists-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

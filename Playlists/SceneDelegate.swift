@@ -19,12 +19,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         
-        /// If they have logged in before, fetch their code
-//        if let refreshToken = try? Keychain.fetch(key: "playlists.spotify.refresh_token") {
-//            Authenticator.refresh(token: refreshToken)
-//        } else {
+        /// If they have logged in before, fetch the refresh token
+        do {
+            let refreshToken = try Keychain.fetch(key: "playlists.spotify.refresh_token")
+            try Authenticator.refresh(refreshToken)
+            changeView(to: HomeView(), inScene: scene)
+        } catch {
             changeView(to: LoginView(), inScene: scene)
-//        }
+        }
     }
     
     /// Change the view in scene `scene` to the given `view`
@@ -63,9 +65,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     /// Authenticate with a user's code
     func authenticate(with code: String, scene: UIScene) {
         do {
-            let semaphore = Semaphore()
-            try Authenticator.tokens(using: code, lock: semaphore)
-            semaphore.wait()
+            try Authenticator.tokens(using: code)
             changeView(to: HomeView(), inScene: scene)
         } catch {
             print(error)

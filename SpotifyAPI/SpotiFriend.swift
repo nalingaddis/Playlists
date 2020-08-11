@@ -170,7 +170,6 @@ enum SpotiFriend {
 
 private extension SpotiFriend {
     enum Errors: Error {
-        case missingToken
         case errorFindingMe
         case missingData
     }
@@ -181,11 +180,7 @@ private extension SpotiFriend {
     /// - Throws: `KeychainError`
     /// - Returns: The current OAuth token
     static func fetchToken() throws -> String {
-        guard let token = try Keychain.fetch(key: "playlists.spotify.access_token") else {
-            throw Errors.missingToken
-        }
-        
-        return token
+        return try Keychain.fetch(key: "playlists.spotify.access_token")
     }
     
     /// Requests the current users identity and returns a Publisher for the response
