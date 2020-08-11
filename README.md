@@ -17,4 +17,4 @@ An iOS app for building and managing Spotify Playlists
 
 ## Help and Settings
 ![](https://github.com/nalingaddis/Playlists/blob/master/DemoImages/help_page.PNG)
-![](https://github.com/nalingaddis/Playlists/blob/master/DemoImages/settings.PNG)
+![](https://github.com/nalingaddis/Playlists/blob/master/DemoImages/settings.png)
